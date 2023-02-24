@@ -163,11 +163,18 @@ NAVBAR
   border-top: 5px transparent solid;
 }
 .navbar .navigation .nav-list .nav-item .nav-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   border-top: 5px transparent solid;
   padding: 0 2.5%;
   height: auto;
   text-decoration: none;
   color: darkgray;
+  height: 100%;
 }
 .navbar .navigation .nav-list .active,
 .navbar .navigation .nav-list .nav-item:hover {
@@ -539,7 +546,7 @@ PROJECTS
   position: absolute;
   display: block;
   width: 50px;
-  height: 50px;
+  height: auto;
   rotate: 180deg;
   bottom: -25px;
   text-align: center;
@@ -577,9 +584,30 @@ PROJECTS
   }
 }
 .projects .samples .sample-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
   width: 23%;
-  padding: 10px 0;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 5px 0;
   position: relative;
+  overflow: hidden;
+  transition: left 0.5s ease;
+}
+.projects .samples .sample-item img {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.projects .samples .sample-item:hover .sample-item-text {
+  opacity: 1;
+  left: 0;
+  width: 100%;
+  transition: left 0.5s ease;
 }
 @media screen and (max-width: 1024px) {
   .projects .samples .sample-item {
@@ -600,11 +628,12 @@ PROJECTS
 @media screen and (max-width: 576px) {
   .projects .samples .sample-item {
     width: 95%;
-    margin: auto;
+    margin: 5px auto;
   }
 }
 .projects .samples .sample-item img {
   width: 100%;
+  height: 100%;
 }
 .projects .samples .sample-item .sample-item-text {
   display: flex;
@@ -613,25 +642,48 @@ PROJECTS
   align-items: center;
   width: 100%;
   height: 100%;
-  height: auto;
   position: absolute;
-  top: 100%;
-  background: rgba(5, 5, 5, 0.75);
-  z-index: -2;
+  left: 100%;
+  bottom: 0;
+  height: 40%;
+  margin: 0;
+  padding: 0;
+  background: rgba(50, 50, 50, 0.95);
   color: #fff;
-  border-radius: 5px;
-  opacity: 0;
+  font-size: 1.5rem;
+  transition: left 0.5s ease;
+}
+@media screen and (max-width: 768px) {
+  .projects .samples .sample-item .sample-item-text {
+    left: 0;
+    height: 30%;
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .projects .samples .sample-item .sample-item-text {
+    height: 20%;
+    font-size: 1.3rem;
+  }
 }
 .projects .samples .sample-item .sample-item-text * {
   margin-top: 0px;
+  color: white;
+  text-decoration: none;
 }
 .projects .samples .sample-item .sample-item-text h4 {
-  margin-top: 5px;
+  margin-top: -15px;
 }
-.projects .samples .sample-item .sample-item-text button {
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin-bottom: 5px;
+.projects .samples .sample-item .sample-item-text .eye-icon {
+  color: #fff;
+  font-size: 2rem;
+  background: #3491b2;
+  border-radius: 50%;
+  padding: 5px;
+  position: relative;
+  top: -20%;
+  left: 40%;
+  box-shadow: 0 -2px 15px black;
 }
 .projects .samples .sample-item .sample-item:hover > .sample-item-text {
   position: absolute;

@@ -149,12 +149,14 @@ NAVBAR
                     height: 100%;
                     border-top: 5px transparent solid;
                     .nav-link {
+                        @include flex(row, center, center);
                         @extend %no-margin;
                         border-top: 5px transparent solid;
                         padding: 0 2.5%;
                         height: auto;
                         text-decoration: none;
                         color: $dark-gray;
+                        height: 100%;
                     }
                 }
                 .active,
@@ -253,7 +255,6 @@ BANNER
                 font-size: .75rem;
             }
             @media screen and (max-width: 576px) {
-
             }
         }
     }
@@ -473,7 +474,7 @@ PROJECTS
                     position: absolute;
                     display: block;
                     width: 50px;
-                    height: 50px;
+                    height: auto;
                     rotate: 180deg;
                     bottom: -25px;
                     text-align: center;
@@ -495,9 +496,24 @@ PROJECTS
             @include flex(row, space-around, flex-start);
         }
         .sample-item {
+            @include flex(row, space-evenly, flex-start);
             width: 23%;
-            padding: 10px 0;
+            height: fit-content;
+            margin: 5px 0;
             position: relative;
+            overflow: hidden;
+            transition: left .5s ease;
+            img {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            &:hover .sample-item-text {
+                opacity: 1;
+                left: 0;
+                width: 100%;
+                transition: left .5s ease;
+            }
             @media screen and (max-width: 1024px) {
                 width: 32%;
             }
@@ -507,31 +523,51 @@ PROJECTS
             }
             @media screen and (max-width: 576px) {
                 width: 95%;
-                margin: auto;
+                margin: 5px auto;
             }
             img {
                 width: 100%;
+                height: 100%;
             }
             .sample-item-text {
                 @include flex (column, flex-start, center);
-                height: auto;
                 position: absolute;
-                top: 100%;
-                background: rgba(5, 5, 5, .75);
-                z-index: -2;
+                left: 100%;
+                bottom : 0;
+                height: 40%;
+                margin: 0;
+                padding: 0;
+                background: rgba(50, 50, 50, .95);
                 color: $white;
-                border-radius: 5px;
-                opacity: 0;
+                font-size: 1.5rem;
+                transition: left .5s ease;
+                @media screen and (max-width: 768px) {
+                left: 0;
+                height: 30%;
+                font-size: 1.3rem;
+                }
+                @media screen and (max-width: 576px) {
+                height: 20%;
+                font-size: 1.3rem;
+                }
                 * {
                     margin-top: 0px;
+                    color: white;
+                    text-decoration: none;
                 }
                 h4 {
-                    margin-top: 5px;
+                    margin-top: -15px;
                 }
-                button {
-                    border-radius: 5px;
-                    padding: 5px 10px;
-                    margin-bottom: 5px;
+                .eye-icon {
+                    color: $white;
+                    font-size: 2rem;
+                    background: $blue;
+                    border-radius: 50%;
+                    padding: 5px;
+                    position: relative;
+                    top: -20%;
+                    left: 40%;
+                    box-shadow: 0 -2px 15px black;
                 }
             }
         .sample-item:hover > .sample-item-text {
