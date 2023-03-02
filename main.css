@@ -15,7 +15,7 @@ MIXINS / KEYFRAMES / INCLUDES / VARIABLES
     transform: rotate(-360deg);
   }
 }
-.contact .contact-content .formulaire fieldset, .contact .contact-content .formulaire span, .contact .contact-content .formulaire p, .projects .navigation-band .nav-band .nav-band-item a, .services .flex .flex-child, .navbar .navigation .nav-list .nav-item .nav-link, .navbar .navigation .nav-list .nav-item, .navbar .navigation .nav-list, html,
+.contact .contact-content .formulaire .address, .contact .contact-content .formulaire fieldset, .contact .contact-content .formulaire .address span, .projects .navigation-band .nav-band .nav-band-item a, .services .flex .flex-child, .navbar .navigation .nav-list .nav-item .nav-link, .navbar .navigation .nav-list .nav-item, .navbar .navigation .nav-list, html,
 body,
 main {
   margin: 0;
@@ -746,19 +746,20 @@ CONTACT
 .contact .contact-content .formulaire div {
   width: 100%;
 }
-.contact .contact-content .formulaire p {
-  font-style: italic;
-  font-size: 1rem;
-  text-align: start;
-}
-.contact .contact-content .formulaire fieldset, .contact .contact-content .formulaire span {
+.contact .contact-content .formulaire fieldset, .contact .contact-content .formulaire .address span {
   border: none;
   font-weight: 500;
   font-size: 1.5rem;
   text-align: left;
   font-style: normal;
 }
-.contact .contact-content .formulaire span {
+.contact .contact-content .formulaire .address {
+  font-style: italic;
+  font-size: 1rem;
+  text-align: start;
+  font-weight: 200;
+}
+.contact .contact-content .formulaire .address span {
   font-size: 1rem;
 }
 .contact .contact-content .formulaire input,

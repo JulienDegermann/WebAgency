@@ -622,12 +622,6 @@ CONTACT
             div{
                 width: 100%
             }
-            p {
-                @extend %no-margin;
-                font-style: italic;
-                font-size: 1rem;
-                text-align: start;
-            }
             fieldset {
                 @extend %no-margin;
                 border: none;
@@ -636,9 +630,16 @@ CONTACT
                 text-align: left;
                 font-style: normal;
             }
-            span{
-                @extend fieldset;
+            .address {
+                @extend %no-margin;
+                font-style: italic;
                 font-size: 1rem;
+                text-align: start;
+                font-weight: 200;
+                span{
+                    @extend fieldset;
+                    font-size: 1rem;
+                }
             }
             input,
             textarea {
