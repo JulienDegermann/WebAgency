@@ -177,8 +177,9 @@ NAVBAR
   height: 100%;
 }
 .navbar .navigation .nav-list .active,
-.navbar .navigation .nav-list .nav-item:hover {
+.navbar .navigation .nav-list .nav-item:hover a {
   border-top: 5px #3491b2 solid;
+  color: #3491b2;
 }
 
 /*

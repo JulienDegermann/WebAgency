@@ -160,8 +160,9 @@ NAVBAR
                     }
                 }
                 .active,
-                .nav-item:hover {
+                .nav-item:hover a {
                     border-top: 5px $blue solid;
+                    color: $blue;
                 }
 
             }
