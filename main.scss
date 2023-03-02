@@ -55,8 +55,10 @@ main {
     @extend %no-margin;
     max-width: 1600px;
     margin: auto;
-    height: fit-content;
     font-family: $fonts;
+}
+body {
+    position: relative;
 }
 p {
     font-weight: 200;
@@ -160,8 +162,9 @@ NAVBAR
                     }
                 }
                 .active,
-                .nav-item:hover {
+                .nav-item:hover a {
                     border-top: 5px $blue solid;
+                    color: $blue;
                 }
 
             }
@@ -291,8 +294,8 @@ BANNER
         border-radius: 50% 0 0 50%;
     }
     .slider-bg {
-        max-width: 100%;
         @include flex (row, flex-start, flex-start);
+        max-width: 100%;
         position: relative;
         overflow: hidden;
         scroll-behavior: smooth;
