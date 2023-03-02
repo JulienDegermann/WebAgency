@@ -208,11 +208,10 @@ BANNER
             @media screen and (max-width: 768px) {
                 width: 70%;
                 font-size: 1.8rem;
-                margin-bottom: 1.3rem;
+                margin-bottom: 0;
             }
             @media screen and (max-width: 576px) {
-                font-size: 1.6rem;
-                margin-bottom: .5rem;
+                font-size: 1.3rem;
             }
             .text-blue {
                 @extend h1;
@@ -253,8 +252,6 @@ BANNER
             }
             @media screen and (max-width: 768px) {
                 font-size: .75rem;
-            }
-            @media screen and (max-width: 576px) {
             }
         }
     }
@@ -329,6 +326,9 @@ MAIN
             width: 50%;
             margin: auto;
             text-align: center;
+            @media screen and (max-width: 768px) {
+                width: 90%;
+            }
         }
     }
 }
@@ -348,6 +348,7 @@ SERVICES  --> reduce indentation number <4
 .services {
     width: 100%;
     margin-top: 100px;
+    }
     .flex {
         width: 100%;
         @include flex(row, flex-end, center);
@@ -406,9 +407,11 @@ SERVICES  --> reduce indentation number <4
                 }
             }
         }   
-        
+        .imac img {
+            width: 100%;
+        }
     }
-}
+
 
 /*
 ------------------------------------------------------
@@ -448,6 +451,9 @@ PROJECTS
                 text-align: center;
                 padding: 0px;
                 width: 100px;
+                @media screen and (max-width: 768px) {
+                    width: 75px;
+                }
                 a {
                     @extend %no-margin;
                     text-decoration: none;
@@ -547,7 +553,7 @@ PROJECTS
                 font-size: 1.3rem;
                 }
                 @media screen and (max-width: 576px) {
-                height: 20%;
+                height: 25%;
                 font-size: 1.3rem;
                 }
                 * {

@@ -15,7 +15,7 @@ MIXINS / KEYFRAMES / INCLUDES / VARIABLES
     transform: rotate(-360deg);
   }
 }
-.contact .contact-content .formulaire .address, .contact .contact-content .formulaire fieldset, .contact .contact-content .formulaire .address span, .projects .navigation-band .nav-band .nav-band-item a, .services .flex .flex-child, .navbar .navigation .nav-list .nav-item .nav-link, .navbar .navigation .nav-list .nav-item, .navbar .navigation .nav-list, html,
+.contact .contact-content .formulaire .address, .contact .contact-content .formulaire fieldset, .contact .contact-content .formulaire .address span, .projects .navigation-band .nav-band .nav-band-item a, .flex .flex-child, .navbar .navigation .nav-list .nav-item .nav-link, .navbar .navigation .nav-list .nav-item, .navbar .navigation .nav-list, html,
 body,
 main {
   margin: 0;
@@ -236,13 +236,12 @@ BANNER
   .slider .slider-title h1, .slider .slider-title h1 .text-blue {
     width: 70%;
     font-size: 1.8rem;
-    margin-bottom: 1.3rem;
+    margin-bottom: 0;
   }
 }
 @media screen and (max-width: 576px) {
   .slider .slider-title h1, .slider .slider-title h1 .text-blue {
-    font-size: 1.6rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
   }
 }
 .slider .slider-title h1 .text-blue {
@@ -375,6 +374,11 @@ MAIN
   margin: auto;
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .main-content section p:first-of-type {
+    width: 90%;
+  }
+}
 
 /*
 ------------------------------------------------------
@@ -390,7 +394,8 @@ SERVICES  --> reduce indentation number <4
   width: 100%;
   margin-top: 100px;
 }
-.services .flex {
+
+.flex {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -400,7 +405,7 @@ SERVICES  --> reduce indentation number <4
   height: 100%;
 }
 @media screen and (max-width: 1024px) {
-  .services .flex {
+  .flex {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -409,7 +414,7 @@ SERVICES  --> reduce indentation number <4
     height: 100%;
   }
 }
-.services .flex .flex-child {
+.flex .flex-child {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -419,26 +424,26 @@ SERVICES  --> reduce indentation number <4
   width: 100%;
   list-style: none;
 }
-.services .flex .flex-child h3,
-.services .flex .flex-child p {
+.flex .flex-child h3,
+.flex .flex-child p {
   margin: 0;
   width: auto;
   text-align: left;
 }
-.services .flex .flex-child p {
+.flex .flex-child p {
   margin: auto;
 }
-.services .flex .flex-child li {
+.flex .flex-child li {
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: 90%;
 }
 @media screen and (max-width: 1024px) {
-  .services .flex .flex-child li {
+  .flex .flex-child li {
     margin: auto;
   }
 }
-.services .flex .flex-child li .circle-icon {
+.flex .flex-child li .circle-icon {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -454,12 +459,12 @@ SERVICES  --> reduce indentation number <4
   margin: 10px;
   animation: linear infinite reverse rotate 3s;
 }
-.services .flex .flex-child li .circle-icon span {
+.flex .flex-child li .circle-icon span {
   animation: linear infinite rotate 3s;
   color: #3491b2;
   font-size: 1.25rem;
 }
-.services .flex .flex-child li .circle-icon::after {
+.flex .flex-child li .circle-icon::after {
   content: "";
   display: block;
   position: absolute;
@@ -470,6 +475,9 @@ SERVICES  --> reduce indentation number <4
   border-radius: 50%;
   border: #fff 4px solid;
   background: #3491b2;
+}
+.flex .imac img {
+  width: 100%;
 }
 
 /*
@@ -522,6 +530,11 @@ PROJECTS
   text-align: center;
   padding: 0px;
   width: 100px;
+}
+@media screen and (max-width: 768px) {
+  .projects .navigation-band .nav-band .nav-band-item {
+    width: 75px;
+  }
 }
 .projects .navigation-band .nav-band .nav-band-item a {
   text-decoration: none;
@@ -663,7 +676,7 @@ PROJECTS
 }
 @media screen and (max-width: 576px) {
   .projects .samples .sample-item .sample-item-text {
-    height: 20%;
+    height: 25%;
     font-size: 1.3rem;
   }
 }
