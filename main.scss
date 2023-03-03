@@ -324,7 +324,7 @@ MAIN
         }
         p:first-of-type {
             width: 50%;
-            margin: auto;
+            margin: 15px auto;
             text-align: center;
             @media screen and (max-width: 768px) {
                 width: 90%;
@@ -360,22 +360,31 @@ SERVICES  --> reduce indentation number <4
             @extend %no-margin;
             width: 100%;
             list-style: none;
-            h3,
-            p {
-                margin: 0;
-                width: auto;
-                text-align: left;
-            }
-            p {
-                margin: auto;
-            }
-            
             li {
+                @include flex (row, center, center);
+                flex-wrap: nowrap;
                 margin-top: 1rem;
                 margin-bottom: 1rem;
                 width: 90%;
                 @media screen and (max-width: 1024px) {
                     margin: auto;
+                }
+                .service-text {
+                    @include flex (column, flex-start, flex-start);
+                    width: 90%;
+                    margin-top: 10px;
+                    h3,
+                    p {
+                        margin: 0;
+                        width: auto;
+                        text-align: justify;
+                    }
+                    @media screen and (max-width: 768px) {
+                        width: 70%;
+                    }
+                    @media screen and (max-width: 576px) {
+                        width: 60%;
+                    }
                 }
                 .circle-icon {
                     @include flex (row, center, center);
@@ -438,12 +447,11 @@ PROJECTS
         .nav-band {
             @include flex (row, center, flex-start);
             list-style: none;
-            margin: auto;
+            margin: 0;
             height: auto;
             padding: 0;
             width:fit-content;
             border-radius: 5px;
-            margin: 20px;
             background: $lightgray;
             .nav-band-item {
                 @include flex (row, center, flex-start);
@@ -552,10 +560,12 @@ PROJECTS
                 height: 30%;
                 font-size: 1.3rem;
                 }
+                /*
                 @media screen and (max-width: 576px) {
-                height: 25%;
-                font-size: 1.3rem;
+                    height: 25%;
+                    font-size: 1.3rem;
                 }
+                */
                 * {
                     margin-top: 0px;
                     color: white;
