@@ -561,6 +561,7 @@ PROJECTS
   width: fit-content;
   border-radius: 5px;
   background: lightgray;
+  margin-bottom: 30px;
 }
 .projects .navigation-band .nav-band .nav-band-item {
   display: flex;
@@ -586,15 +587,17 @@ PROJECTS
   height: 100%;
   padding: 10px;
 }
+.projects .navigation-band .nav-band .nav-band-item:hover, .projects .navigation-band .nav-band .nav-band-item:hover {
+  background: #3491b2;
+}
+.projects .navigation-band .nav-band .nav-band-item:hover a {
+  color: #fff;
+}
 .projects .navigation-band .nav-band .nav-band-item:first-child {
   border-radius: 5px 0 0 5px;
 }
 .projects .navigation-band .nav-band .nav-band-item:last-child {
   border-radius: 0 5px 5px 0;
-}
-.projects .navigation-band .nav-band .nav-band-item:hover, .projects .navigation-band .nav-band .nav-band-item:hover a {
-  background: #3491b2;
-  color: #fff;
 }
 .projects .navigation-band .nav-band .nav-band-item:hover .material-symbols-rounded {
   opacity: 1;

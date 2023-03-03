@@ -469,6 +469,7 @@ PROJECTS
             width:fit-content;
             border-radius: 5px;
             background: $lightgray;
+            margin-bottom: 30px;
             .nav-band-item {
                 @include flex (row, center, flex-start);
                 position: relative;
@@ -486,16 +487,18 @@ PROJECTS
                     height: 100%;
                     padding: 10px;
                 }
+                &:hover,
+                &:hover {
+                    background: $blue;
+                }
+                &:hover a {
+                    color: $white; 
+                }
                 &:first-child {
                     border-radius: 5px 0 0 5px;
                 }
                 &:last-child {
                     border-radius: 0 5px 5px 0;
-                }
-                &:hover,
-                &:hover a {
-                    background: $blue;
-                    color: $white;
                 }
                 &:hover .material-symbols-rounded {
                     opacity: 1;
