@@ -137,18 +137,23 @@ NAVBAR
             @include flex(row, center, center);
             display: block;
             width: fit-content;
+            margin-right: 5%;
             @media screen and (max-width: 768px) {
                 width: 100vw;
                 max-height: 65px;
+                margin-right: 0;
             }
             .nav-list{
                 @include flex(row, center, center);
                 @extend .navigation;
                 @extend %no-margin;
                 height: 100%;
-                padding-right: 10%;
                 list-style: none;
                 width: 40vw;
+                @media screen and (max-width: 768px) {
+                    width: 100vw;
+                    max-height: 65px;
+                }
                 .nav-item {
                     @include flex(row, center, center);
                     @extend %no-margin;
