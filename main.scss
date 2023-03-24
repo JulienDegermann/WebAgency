@@ -56,6 +56,7 @@ main {
     max-width: 1600px;
     margin: auto;
     font-family: $fonts;
+    box-sizing: border-box;
 }
 body {
     position: relative;
@@ -104,6 +105,11 @@ GENERAL
 */
 
 
+.main-content::-webkit-scrollbar {
+    display: block;
+    position: fixed;
+}
+
 
 /*
 ------------------------------------------------------ 
@@ -112,10 +118,9 @@ NAVBAR
 */
 .navbar {
     @include flex(row, space-between, center);
-    position: absolute;
+    position: fixed;
     max-width: 1600px;
     top: 0;
-    left: 0;
     overflow: hidden;
     font-size: 1.1rem;
     height: 100px;
@@ -136,7 +141,7 @@ NAVBAR
         .navigation {
             @include flex(row, center, center);
             display: block;
-            width: fit-content;
+            width: 40%;
             margin-right: 5%;
             @media screen and (max-width: 768px) {
                 width: 100vw;
@@ -149,7 +154,7 @@ NAVBAR
                 @extend %no-margin;
                 height: 100%;
                 list-style: none;
-                width: 40vw;
+                width: 100%;
                 @media screen and (max-width: 768px) {
                     width: 100vw;
                     max-height: 65px;
@@ -276,6 +281,7 @@ BANNER
         text-decoration: none;
         z-index: 2;
         position: absolute;
+        top: 50%;
         &:hover {
             background: rgba(0, 0, 0, .9);
         }
@@ -303,11 +309,16 @@ BANNER
         max-width: 100%;
         position: relative;
         overflow: hidden;
+        -moz-overflow:hidden;
         scroll-behavior: smooth;
         #slider-img2,
         #slider-img1 {
+            padding-top: 100px;
             width: 100%;
             height: 100%;
+            @media screen and (max-width: 768px) {
+                padding-top: 125px;
+                }
         }
     }
 }
@@ -326,7 +337,6 @@ MAIN
 */
 .main-content {
     overflow: auto;
-    position: fixed;
     top: 100px;
     height: 100%;
     scroll-behavior: smooth;
@@ -334,6 +344,11 @@ MAIN
         top: 125px;
         }
     section {
+        padding-top: 100px;
+        margin-top: -25px;
+        @media screen and (max-width: 768px) {
+            padding-top: 125px;
+            }
         h2 {
             text-align: center;
             text-transform: uppercase;
